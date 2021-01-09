@@ -26,6 +26,7 @@
             </template>
           </q-select>
           <q-btn flat outline dense icon="add" label="新增选课" @click="onAdd" class="q-ml-md"/>
+          <q-btn flat outline dense icon="remove" label="删除选课" @click="onAdd" class="q-ml-md"/>
           <q-btn flat outline dense icon="cloud_upload" label="上传" @click="onUpdate" class="q-ml-md"/>
         </template>
         <template v-slot:body="props">
@@ -115,6 +116,7 @@ export default {
       }).then(response => {
         console.log(response);
         this.success();
+        this.onSubmit(this.upload_url)
       }).catch(error => {
         console.log(error);
         this.failed();
